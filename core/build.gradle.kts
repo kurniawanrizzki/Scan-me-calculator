@@ -1,30 +1,27 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = AppConfig.applicationId
+    namespace = "com.noscale.core"
     compileSdk = AppConfig.compileSdkVersion
 
     defaultConfig {
-        applicationId = AppConfig.applicationId
         minSdk = AppConfig.minSdkVersion
         targetSdk = AppConfig.targetSdkVersion
-        versionCode = 100000
-        versionName = "1.0.0"
 
         testInstrumentationRunner = AppConfig.testInstrumentRunner
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-        getByName("debug") {
+        release {
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -40,12 +37,9 @@ android {
 }
 
 dependencies {
-    libs(AppDependencies.Modules.CORE)
-
     androidx()
 
     implementations(
-        // material
         AppDependencies.material
     )
 

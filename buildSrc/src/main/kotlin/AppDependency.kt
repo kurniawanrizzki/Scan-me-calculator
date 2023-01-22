@@ -1,4 +1,5 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.project
 
 object AppDependencies {
     val coreKtx by lazy { "androidx.core:core-ktx:${AppConstant.Version.AndroidX.CORE_KTX_VERSION}" }
@@ -7,6 +8,10 @@ object AppDependencies {
     val junit by lazy { "junit:junit:${AppConstant.Version.JUNIT_VERSION}" }
     val junitExt by lazy { "androidx.test.ext:junit:${AppConstant.Version.JUNIT_EXT_VERSION}" }
     val espresso by lazy { "androidx.test.espresso:espresso-core:${AppConstant.Version.ESPRESSO_VERSION}" }
+
+    object Modules {
+        const val CORE = ":core"
+    }
 }
 
 fun DependencyHandler.androidx() = implementations(
@@ -20,6 +25,10 @@ fun DependencyHandler.tests() {
         AppDependencies.junitExt,
         AppDependencies.espresso
     )
+}
+
+fun DependencyHandler.libs(vararg modules: String) = modules.forEach {
+    add("implementation", project(it))
 }
 
 fun DependencyHandler.implementations(vararg dependencies: String) = dependencies.forEach {
