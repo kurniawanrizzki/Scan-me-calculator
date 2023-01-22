@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "723212053758",
+    "project_id": "noscale-fit",
+    "storage_bucket": "noscale-fit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723212053758:android:d2f6a522ee56b30a4dc9af",
+        "android_client_info": {
+          "package_name": "com.noscale.ocr.green.camera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajmUHr4DgWbFGb-wF5L4pv3UU1qnXHVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723212053758:android:f422a356abec0ce04dc9af",
+        "android_client_info": {
+          "package_name": "com.noscale.ocr.green.file"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajmUHr4DgWbFGb-wF5L4pv3UU1qnXHVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723212053758:android:9a306824946937b54dc9af",
+        "android_client_info": {
+          "package_name": "com.noscale.ocr.red.camera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajmUHr4DgWbFGb-wF5L4pv3UU1qnXHVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723212053758:android:46f46dd7970076c64dc9af",
+        "android_client_info": {
+          "package_name": "com.noscale.ocr.red.file"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajmUHr4DgWbFGb-wF5L4pv3UU1qnXHVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723212053758-d0pdc93jt0k7fjhtt6gvcns124655hq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

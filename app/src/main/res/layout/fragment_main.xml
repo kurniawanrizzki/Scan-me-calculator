@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isEmpty"
+            type="Boolean"
+            />
+        <variable
+            name="vm"
+            type="com.noscale.ocr.view.MainViewModel"
+            />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_light"
+        >
+
+        <include
+            android:id="@+id/v_toolbar"
+            app:title="@{@string/page_title}"
+            layout="@layout/toolbar"
+            />
+
+        <include
+            android:id="@+id/v_loading"
+            android:visibility="visible"
+            tools:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            layout="@layout/layout_loading"
+            />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/v_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:visibility="visible"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_storage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/normal_dim"
+                    android:text="@string/text_switch"
+                    android:checked="@={vm.switchStorage}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/sw_storage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+                    <include
+                        android:id="@+id/v_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="@{isEmpty ? View.VISIBLE : View.GONE, default = visible}"
+                        layout="@layout/layout_empty"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/normal_dim"
+                        android:paddingStart="@dimen/normal_dim"
+                        android:paddingEnd="@dimen/normal_dim"
+                        android:visibility="@{isEmpty ? View.GONE : View.VISIBLE, default = gone}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_main"
+                        />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large_dim"
+                android:layout_gravity="end|bottom"
+                android:contentDescription="@string/capture_content_description"
+                android:src="@drawable/ic_add"
+                android:onClick="@{() -> vm.start()}"
+                app:tint="@color/white"
+                app:fabSize="normal"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
